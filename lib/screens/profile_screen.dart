@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/constants/styles.dart';
 import 'package:flutter_application_3/widgets/profile_content.dart';
 
 class Profile extends StatefulWidget {
-  final Map<String, dynamic> profileDetails; 
+  final Map<String, dynamic> profileDetails;
 
   const Profile({super.key, required this.profileDetails});
 
@@ -18,7 +19,10 @@ class _ProfileState extends State<Profile> {
       appBar: AppBar(
         backgroundColor: Colors.orange,
         elevation: 0,
-        title: const Text('Profile Screen'),
+        title: const Text(
+          'Profile Screen',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       drawer: const Drawer(),
       body: Container(
@@ -38,8 +42,8 @@ class _ProfileState extends State<Profile> {
             child: Material(
               elevation: 10,
               shadowColor: Colors.black,
-              borderRadius: BorderRadius.circular(15),
-              color: Colors.black,
+              borderRadius: AppStyles.cardDecoration.borderRadius,
+              color: AppStyles.cardDecoration.color,
               child: Container(
                 width: 350,
                 padding: const EdgeInsets.all(20.0),

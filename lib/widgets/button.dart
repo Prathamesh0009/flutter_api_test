@@ -1,7 +1,7 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'package:flutter_application_3/constants/styles.dart';
 import 'package:flutter_application_3/screens/welcome_screen.dart';
+
 
 class Button extends StatefulWidget {
   const Button({super.key});
@@ -16,16 +16,15 @@ class _ButtonState extends State<Button> {
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
+      decoration: AppStyles.cardDecoration.copyWith(
         gradient: const LinearGradient(colors: [Colors.blue, Colors.green]),
       ),
       child: ElevatedButton(
-        style: ButtonStyle(
-          elevation: MaterialStateProperty.all(10), // Corrected style property
-          alignment: Alignment.center,
+        style: AppStyles.raisedButtonStyle.copyWith(
+          elevation: MaterialStateProperty.all(10),
           padding: MaterialStateProperty.all(
-              const EdgeInsets.symmetric(horizontal: 75, vertical: 15)),
+            const EdgeInsets.symmetric(horizontal: 75, vertical: 15),
+          ),
           backgroundColor: MaterialStateProperty.all(Colors.transparent),
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
@@ -35,20 +34,15 @@ class _ButtonState extends State<Button> {
         ),
         onPressed: () async {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const Welcome()));
+            context,
+            MaterialPageRoute(builder: (context) => const Welcome()),
+          );
         },
         child: const Text(
           'Create Account',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
+          style: AppStyles.profileNameStyle,
         ),
       ),
     );
   }
-
-
-  
 }

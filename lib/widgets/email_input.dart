@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/constants/styles.dart';
+
 
 class EmailInput extends StatelessWidget {
   const EmailInput({super.key});
@@ -9,33 +11,8 @@ class EmailInput extends StatelessWidget {
       height: 50,
       child: TextField(
         keyboardType: TextInputType.emailAddress,
-        style: const TextStyle(color: Colors.white, fontSize: 14),
-        decoration: InputDecoration(
-          prefixIcon: Icon(Icons.email, color: Colors.white),
-          filled: true,
-          fillColor: Colors.black,
-          hintText: 'Enter your email',
-          hintStyle: TextStyle(
-            color: Colors.white.withOpacity(0.75),
-          ),
-          contentPadding: EdgeInsets.symmetric(horizontal: 20.0),
-          border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.green, width: 1.0),
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.green, width: 1.0),
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.green, width: 1.0),
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.red, width: 1.0),
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-        ),
+        style: AppStyles.profileDescriptionStyle.copyWith(fontSize: 14),
+        decoration: AppStyles.emailInputDecoration,
       ),
     );
   }
