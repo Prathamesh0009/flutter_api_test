@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/constants/styles.dart';
 import 'package:flutter_application_3/widgets/menu_item.dart';
 
 class ProfileContent extends StatefulWidget {
-  final Map<String, dynamic> profileDetails; 
+  final Map<String, dynamic> profileDetails;
 
   const ProfileContent({super.key, required this.profileDetails});
 
@@ -20,9 +21,7 @@ class _ProfileContentState extends State<ProfileContent> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           Row(
             children: [
               Container(
@@ -31,36 +30,27 @@ class _ProfileContentState extends State<ProfileContent> {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                    image: NetworkImage(
-                      profile['image'], 
-                    ),
+                    image: NetworkImage(profile['image']),
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
               const SizedBox(width: 15),
-              Expanded( //  allow text wrapping
+              Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      profile['name'], 
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
+                      profile['name'],
+                      style: AppStyles.profileNameStyle,
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      profile['description'], 
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.orange,
+                      profile['description'],
+                      style: AppStyles.profileDescriptionStyle.copyWith(
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      maxLines: 2, 
-                      overflow: TextOverflow.ellipsis, 
+                      maxLines: 2,
                     ),
                   ],
                 ),
@@ -69,7 +59,7 @@ class _ProfileContentState extends State<ProfileContent> {
           ),
           const SizedBox(height: 20),
           Container(
-            decoration: BoxDecoration(
+            decoration: AppStyles.cardDecoration.copyWith(
               color: Colors.black.withOpacity(0.1),
               borderRadius: BorderRadius.circular(20),
             ),
@@ -79,7 +69,7 @@ class _ProfileContentState extends State<ProfileContent> {
                 MenuItem(
                   text: 'Followers',
                   icon: Icons.people,
-                  value: profile['followers'].toString(), 
+                  value: profile['followers'].toString(),
                 ),
                 const Divider(color: Colors.white, thickness: 0.5),
                 MenuItem(
@@ -91,19 +81,19 @@ class _ProfileContentState extends State<ProfileContent> {
                 MenuItem(
                   text: 'Customers',
                   icon: Icons.people_outline,
-                  value: profile['customers'].toString(), 
+                  value: profile['customers'].toString(),
                 ),
                 const Divider(color: Colors.white, thickness: 0.5),
                 MenuItem(
                   text: 'Products',
                   icon: Icons.shopping_cart,
-                  value: profile['products'].toString(), 
+                  value: profile['products'].toString(),
                 ),
                 const Divider(color: Colors.white, thickness: 0.5),
                 MenuItem(
                   text: 'Reviews',
                   icon: Icons.reviews,
-                  value: profile['reviews'].toString(), 
+                  value: profile['reviews'].toString(),
                 ),
                 const Divider(color: Colors.white, thickness: 0.5),
                 MenuItem(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/constants/styles.dart';
 import 'package:flutter_application_3/widgets/button.dart';
 import 'package:flutter_application_3/widgets/email_input.dart';
 import 'package:flutter_application_3/widgets/password_input.dart';
+
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -33,25 +35,17 @@ class _SignUpState extends State<SignUp> {
               child: Material(
                 elevation: 10,
                 shadowColor: Colors.black,
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.black,
+                borderRadius: AppStyles.cardDecoration.borderRadius,
+                color: AppStyles.cardDecoration.color,
                 child: Padding(
                   padding: const EdgeInsets.all(10),
                   child: Container(
                     width: 350,
                     padding: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 15.0),
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(15),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black54,
-                          offset: Offset(0, 4),
-                          blurRadius: 8,
-                        ),
-                      ],
+                      vertical: 10.0,
+                      horizontal: 15.0,
                     ),
+                    decoration: AppStyles.cardDecoration,
                     child: Column(
                       children: [
                         Padding(
@@ -61,33 +55,29 @@ class _SignUpState extends State<SignUp> {
                             children: [
                               Text(
                                 'Get Started',
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 50,
-                                ),
-                                textAlign: TextAlign.left,
+                                style: AppStyles.titleTextStyle,
                               ),
                               const SizedBox(height: 5),
-                              Text('Create your Account',
-                                  style: const TextStyle(
-                                      color: Colors.orange, fontSize: 20),
-                                  textAlign: TextAlign.left),
+                              Text(
+                                'Create your Account',
+                                style: AppStyles.subTitleTextStyle,
+                              ),
                             ],
                           ),
                         ),
                         const SizedBox(height: 20),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 7.0),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 7.0),
                           child: EmailInput(),
                         ),
-                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 7.0),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 7.0),
                           child: PasswordInput(),
                         ),
-                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 7.0),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 7.0),
                           child: Button(),
-                        )
+                        ),
                       ],
                     ),
                   ),

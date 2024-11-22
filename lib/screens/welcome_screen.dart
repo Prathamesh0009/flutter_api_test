@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/screens/profile_screen.dart';
-import 'package:flutter_application_3/services/profile_api.dart'; // Import the API service
+import 'package:flutter_application_3/services/profile_api.dart'; 
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});

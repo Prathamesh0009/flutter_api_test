@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/constants/styles.dart';
 
 class MenuItem extends StatelessWidget {
   final String text;
@@ -14,7 +15,6 @@ class MenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
@@ -24,18 +24,12 @@ class MenuItem extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white,
-              ),
+              style: AppStyles.profileDescriptionStyle.copyWith(fontSize: 16),
             ),
           ),
           Text(
             value,
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.white,
-            ),
+            style: AppStyles.profileDescriptionStyle.copyWith(fontSize: 14),
           ),
         ],
       ),
